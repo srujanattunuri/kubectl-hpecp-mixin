@@ -2,10 +2,10 @@ package main
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/srujanreddya/kubectl-hpecp-mixin/pkg/kubectl-hpecp"
+	"github.com/srujanattunuri/kubectl-hpecp-mixin/pkg/kubectlhpecp"
 )
 
-func buildUpgradeCommand(m *kubectl-hpecp.Mixin) *cobra.Command {
+func buildUpgradeCommand(m *kubectlhpecp.Mixin) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "upgrade",
 		Short: "Execute the invoke functionality of this mixin",

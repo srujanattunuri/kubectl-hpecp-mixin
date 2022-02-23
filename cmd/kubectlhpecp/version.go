@@ -3,10 +3,10 @@ package main
 import (
 	"get.porter.sh/porter/pkg/porter/version"
 	"github.com/spf13/cobra"
-	"github.com/srujanreddya/kubectl-hpecp-mixin/pkg/kubectl-hpecp"
+	"github.com/srujanattunuri/kubectl-hpecp-mixin/pkg/kubectlhpecp"
 )
 
-func buildVersionCommand(m *kubectl-hpecp.Mixin) *cobra.Command {
+func buildVersionCommand(m *kubectlhpecp.Mixin) *cobra.Command {
 	opts := version.Options{}
 
 	cmd := &cobra.Command{

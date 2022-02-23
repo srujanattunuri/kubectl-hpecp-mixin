@@ -1,4 +1,4 @@
-module get.porter.sh/mixin/skeletor
+module github.com/srujanattunuri/kubectl-hpecp-mixin
 
 go 1.17
 

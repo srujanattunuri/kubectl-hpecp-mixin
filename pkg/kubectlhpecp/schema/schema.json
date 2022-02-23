@@ -4,40 +4,40 @@
     "installStep": {
       "type": "object",
       "properties": {
-        "kubectl-hpecp": {"$ref": "#/definitions/kubectl-hpecp"}
+        "kubectlhpecp": {"$ref": "#/definitions/kubectlhpecp"}
       },
       "required": [
-        "kubectl-hpecp"
+        "kubectlhpecp"
       ],
       "additionalProperties": false
     },
     "upgradeStep": {
       "type": "object",
       "properties": {
-        "kubectl-hpecp": {"$ref": "#/definitions/kubectl-hpecp"}
+        "kubectlhpecp": {"$ref": "#/definitions/kubectlhpecp"}
       },
       "required": [
-        "kubectl-hpecp"
+        "kubectlhpecp"
       ],
       "additionalProperties": false
     },
     "invokeStep": {
       "type": "object",
       "properties": {
-        "kubectl-hpecp": {"$ref": "#/definitions/kubectl-hpecp"}
+        "kubectlhpecp": {"$ref": "#/definitions/kubectlhpecp"}
       },
       "required": [
-        "kubectl-hpecp"
+        "kubectlhpecp"
       ],
       "additionalProperties": false
     },
     "uninstallStep": {
       "type": "object",
       "properties": {
-        "kubectl-hpecp": {"$ref": "#/definitions/kubectl-hpecp"}
+        "kubectlhpecp": {"$ref": "#/definitions/kubectlhpecp"}
       },
       "required": [
-        "kubectl-hpecp"
+        "kubectlhpecp"
       ],
       "additionalProperties": false
     },
@@ -74,7 +74,7 @@
         ]
       }
     },
-    "kubectl-hpecp": {
+    "kubectlhpecp": {
       "type": "object",
       "properties": {
         "description": {

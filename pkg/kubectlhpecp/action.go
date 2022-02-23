@@ -1,4 +1,4 @@
-package kubectl-hpecp
+package kubectlhpecp
 
 import (
 	"get.porter.sh/porter/pkg/exec/builder"
@@ -14,7 +14,7 @@ type Action struct {
 
 // MarshalYAML converts the action back to a YAML representation
 // install:
-//   kubectl-hpecp:
+//   kubectlhpecp:
 //     ...
 
 func (a Action) MarshalYAML() (interface{}, error) {
@@ -28,7 +28,7 @@ func (a Action) MakeSteps() interface{} {
 
 // UnmarshalYAML takes any yaml in this form
 // ACTION:
-// - kubectl-hpecp: ...
+//  kubectlhpecp: ...
 // and puts the steps into the Action.Steps field
 func (a *Action) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	results, err := builder.UnmarshalAction(unmarshal, a)
@@ -58,7 +58,7 @@ func (a Action) GetSteps() []builder.ExecutableStep {
 }
 
 type Step struct {
-	Instruction `yaml:"kubectl-hpecp"`
+	Instruction `yaml:"kubectlhpecp"`
 }
 
 // Actions is a set of actions, and the steps, passed from Porter.
@@ -67,12 +67,12 @@ type Actions []Action
 // UnmarshalYAML takes chunks of a porter.yaml file associated with this mixin
 // and populates it on the current action set.
 // install:
-//   kubectl-hpecp:
+//   kubectlhpecp:
 //     ...
-//   kubectl-hpecp:
+//   kubectlhpecp:
 //     ...
 // upgrade:
-//   kubectl-hpecp:
+//   kubectlhpecp:
 //     ...
 func (a *Actions) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	results, err := builder.UnmarshalAction(unmarshal, Action{})
@@ -104,20 +104,20 @@ type Instruction struct {
 
 	// Useful when the CLI you are calling wants some arguments to come after flags
 	// Arguments are passed first, then Flags, then SuffixArguments.
-	SuffixArguments []string `yaml:"suffix-arguments,omitempty"`
+	SuffixArguments []string `yaml:"suffixarguments,omitempty"`
 
 	Flags          builder.Flags `yaml:"flags,omitempty"`
 	Outputs        []Output      `yaml:"outputs,omitempty"`
-	SuppressOutput bool          `yaml:"suppress-output,omitempty"`
+	SuppressOutput bool          `yaml:"suppressoutput,omitempty"`
 
 	// Allow the user to ignore some errors
 	// Adds the ignoreError functionality from the exec mixin
-	// https://release-v1.porter.sh/mixins/exec/#ignore-error
+	// https://releasev1.porter.sh/mixins/exec/#ignoreerror
 	builder.IgnoreErrorHandler `yaml:"ignoreError,omitempty"`
 }
 
 func (s Instruction) GetCommand() string {
-	return "kubectl-hpecp"
+	return "kubectlhpecp"
 }
 
 func (s Instruction) GetWorkingDir() string {

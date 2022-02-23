@@ -1,4 +1,4 @@
-package kubectl-hpecp
+package kubectlhpecp
 
 import (
 	"testing"

@@ -1,5 +1,5 @@
 install:
-  - kubectl-hpecp:
+  - kubectlhpecp:
       description: "Invalid Input Test Case"
       args:
       - yarrrr

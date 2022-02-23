@@ -1,4 +1,4 @@
-package kubectl-hpecp
+package kubectlhpecp
 
 import (
 	"strings"
@@ -6,7 +6,7 @@ import (
 
 	"get.porter.sh/porter/pkg/porter/version"
 	"get.porter.sh/porter/pkg/printer"
-	"github.com/srujanreddya/kubectl-hpecp-mixin/pkg"
+	"github.com/srujanattunuri/kubectl-hpecp-mixin/pkg"
 	"github.com/stretchr/testify/require"
 )
 
@@ -22,7 +22,7 @@ func TestPrintVersion(t *testing.T) {
 	m.PrintVersion(opts)
 
 	gotOutput := m.TestContext.GetOutput()
-	wantOutput := "kubectl-hpecp v1.2.3 (abc123) by srujanreddya"
+	wantOutput := "kubectlhpecp v1.2.3 (abc123) by srujanattunuri"
 	if !strings.Contains(gotOutput, wantOutput) {
 		t.Fatalf("invalid output:\nWANT:\t%q\nGOT:\t%q\n", wantOutput, gotOutput)
 	}
@@ -42,7 +42,7 @@ func TestPrintJsonVersion(t *testing.T) {
 
 	gotOutput := m.TestContext.GetOutput()
 	wantOutput := `{
-  "name": "kubectl-hpecp",
+  "name": "kubectlhpecp",
   "version": "v1.2.3",
   "commit": "abc123",
   "author": "YOURNAME"

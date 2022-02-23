@@ -2,10 +2,10 @@ package main
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/srujanreddya/kubectl-hpecp-mixin/pkg/kubectl-hpecp"
+	"github.com/srujanattunuri/kubectl-hpecp-mixin/pkg/kubectlhpecp"
 )
 
-func buildBuildCommand(m *kubectl-hpecp.Mixin) *cobra.Command {
+func buildBuildCommand(m *kubectlhpecp.Mixin) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "build",
 		Short: "Generate Dockerfile lines for the bundle invocation image",

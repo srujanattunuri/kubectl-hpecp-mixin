@@ -1,6 +1,8 @@
-package kubectl-hpecp
+package kubectlhpecp
 
 import (
+	"fmt"
+
 	"get.porter.sh/porter/pkg/exec/builder"
 	yaml "gopkg.in/yaml.v2"
 )
@@ -10,9 +12,9 @@ type BuildInput struct {
 	Config MixinConfig
 }
 
-// MixinConfig represents configuration that can be set on the kubectl-hpecp mixin in porter.yaml
+// MixinConfig represents configuration that can be set on the kubectlhpecp mixin in porter.yaml
 // mixins:
-// - kubectl-hpecp:
+// - kubectlhpecp:
 //	  clientVersion: "v0.0.0"
 
 type MixinConfig struct {
@@ -32,10 +34,10 @@ type MixinConfig struct {
 // `
 const dockerfileLines = `RUN apt-get update && \
 						 apt-get install -y curl tar && \
-                         curl -O https://bluedata-releases.s3.amazonaws.com/kubectl-epic/3.5/13/linux/kubectl-hpecp.star && \
-						 tar xf kubectl-hpecp.star && \
-						 mv kubectl-hpecp /usr/local/bin/kubectl-hpecp && \
-						 chmod a+x /usr/local/bin/kubectl-hpecp
+                         curl -O https://bluedata-releases.s3.amazonaws.com/kubectl-epic/3.5/13/linux/kubectlhpecp.star && \
+						 tar xf kubectlhpecp.star && \
+						 mv kubectlhpecp /usr/local/bin/kubectlhpecp && \
+						 chmod a+x /usr/local/bin/kubectlhpecp
 						 `
 
 // Build will generate the necessary Dockerfile lines

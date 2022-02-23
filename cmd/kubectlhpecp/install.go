@@ -2,14 +2,14 @@ package main
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/srujanreddya/kubectl-hpecp-mixin/pkg/kubectl-hpecp"
+	"github.com/srujanattunuri/kubectl-hpecp-mixin/pkg/kubectlhpecp"
 )
 
 var (
 	commandFile string
 )
 
-func buildInstallCommand(m *kubectl-hpecp.Mixin) *cobra.Command {
+func buildInstallCommand(m *kubectlhpecp.Mixin) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "install",
 		Short: "Execute the install functionality of this mixin",

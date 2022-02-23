@@ -1,4 +1,4 @@
-package kubectl-hpecp
+package kubectlhpecp
 
 import (
 	"bytes"
@@ -25,7 +25,7 @@ func TestMixin_Execute(t *testing.T) {
 		wantCommand string // Full command that you expect to be called based on the input YAML
 	}{
 		{"action", "testdata/step-input.yaml", "VICTORY",
-			"kubectl-hpecp man-e-faces --species human"},
+			"kubectlhpecp man-e-faces --species human"},
 	}
 
 	defer os.Unsetenv(test.ExpectedCommandEnv)
