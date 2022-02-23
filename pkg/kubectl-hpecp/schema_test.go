@@ -1,4 +1,4 @@
-package skeletor
+package kubectl-hpecp
 
 import (
 	"fmt"

@@ -1,4 +1,4 @@
-package skeletor
+package kubectl-hpecp
 
 import (
 	"get.porter.sh/porter/pkg/exec/builder"
@@ -10,9 +10,9 @@ type BuildInput struct {
 	Config MixinConfig
 }
 
-// MixinConfig represents configuration that can be set on the skeletor mixin in porter.yaml
+// MixinConfig represents configuration that can be set on the kubectl-hpecp mixin in porter.yaml
 // mixins:
-// - skeletor:
+// - kubectl-hpecp:
 //	  clientVersion: "v0.0.0"
 
 type MixinConfig struct {
@@ -30,6 +30,13 @@ type MixinConfig struct {
 // 	--recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF && \
 // apt-get update && apt-get install azure-cli
 // `
+const dockerfileLines = `RUN apt-get update && \
+						 apt-get install -y curl tar && \
+                         curl -O https://bluedata-releases.s3.amazonaws.com/kubectl-epic/3.5/13/linux/kubectl-hpecp.star && \
+						 tar xf kubectl-hpecp.star && \
+						 mv kubectl-hpecp /usr/local/bin/kubectl-hpecp && \
+						 chmod a+x /usr/local/bin/kubectl-hpecp
+						 `
 
 // Build will generate the necessary Dockerfile lines
 // for an invocation image using this mixin
@@ -52,7 +59,7 @@ func (m *Mixin) Build() error {
 		m.ClientVersion = suppliedClientVersion
 	}
 
-	//fmt.Fprintf(m.Out, dockerfileLines)
+	fmt.Fprintf(m.Out, dockerfileLines)
 
 	// Example of pulling and defining a client version for your mixin
 	// fmt.Fprintf(m.Out, "\nRUN curl https://get.helm.sh/helm-%s-linux-amd64.tar.gz --output helm3.tar.gz", m.ClientVersion)

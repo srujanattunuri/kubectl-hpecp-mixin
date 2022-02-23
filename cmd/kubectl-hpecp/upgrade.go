@@ -1,11 +1,11 @@
 package main
 
 import (
-	"get.porter.sh/mixin/skeletor/pkg/skeletor"
 	"github.com/spf13/cobra"
+	"github.com/srujanreddya/kubectl-hpecp-mixin/pkg/kubectl-hpecp"
 )
 
-func buildUpgradeCommand(m *skeletor.Mixin) *cobra.Command {
+func buildUpgradeCommand(m *kubectl-hpecp.Mixin) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "upgrade",
 		Short: "Execute the invoke functionality of this mixin",
