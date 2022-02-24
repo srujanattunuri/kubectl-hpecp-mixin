@@ -34,10 +34,10 @@ type MixinConfig struct {
 // `
 const dockerfileLines = `RUN apt-get update && \
 						 apt-get install -y curl tar && \
-                         curl -O https://bluedata-releases.s3.amazonaws.com/kubectl-epic/3.5/13/linux/kubectlhpecp.star && \
-						 tar xf kubectlhpecp.star && \
-						 mv kubectlhpecp /usr/local/bin/kubectlhpecp && \
-						 chmod a+x /usr/local/bin/kubectlhpecp
+                         curl -O https://bluedata-releases.s3.amazonaws.com/kubectl-epic/3.5/13/linux/kubectl-hpecp.star && \
+						 tar xf kubectl-hpecp.star && \
+						 mv kubectlhpecp /usr/local/bin/kubectl-hpecp && \
+						 chmod a+x /usr/local/bin/kubectl-hpecp
 						 `
 
 // Build will generate the necessary Dockerfile lines
